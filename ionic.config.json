@@ -1,0 +1,7 @@
+{
+  "name": "TLB",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
