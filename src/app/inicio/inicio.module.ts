@@ -7,14 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { InicioPageRoutingModule } from './inicio-routing.module';
 
 import { InicioPage } from './inicio.page';
+import { ModuloComponentesModule } from '../componentes/modulo-componentes.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    InicioPageRoutingModule
+    InicioPageRoutingModule,
+    ModuloComponentesModule /*1 Importado desde *Vease Nombre**/
   ],
   declarations: [InicioPage]
 })
-export class InicioPageModule {}
+export class InicioPageModule { }
