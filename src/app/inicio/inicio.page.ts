@@ -10,11 +10,15 @@ import * as moment from 'moment';
 export class InicioPage implements OnInit {
 
   fecha: string;
+  nombre: string;
+  miembro: string;
 
   constructor(public alertController: AlertController,
     public navCtrl: NavController) {
     moment.locale('es-mx');
     this.fecha = moment().format("D MMM YYYY, h:mm:ss a");
+    let miembro = JSON.parse(localStorage.getItem('miembro'));
+    this.nombre = miembro.nombre;
   }
 
   ngOnInit() {
