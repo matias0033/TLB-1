@@ -1,0 +1,56 @@
+<!-- HEADER -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Recupera tu Contraseña</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- INICIO DE CONTENT REGISTRO -->
+<ion-content>
+
+  <div id="container">
+
+    <div id="tellevo">
+      <img src="../assets/img/TeLlevo.png" alt="Viaje">
+    </div>
+
+    <div id="formularioR">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Recupere su Contraseña</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+
+          <form [formGroup]="formularioRegistro" (keyup.enter)="guardar()">
+            <ion-item>
+              <ion-label position="floating">Usuario</ion-label>
+              <ion-input formControlName="usuario" type="text" minlength="10" maxlength="25"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Nueva Contraseña</ion-label>
+              <ion-input formControlName="pass" type="password" minlength="6" maxlength="6"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Reconfirme Contraseña</ion-label>
+              <ion-input formControlName="confirmacionPass" type="password" minlength="6" maxlength="6"></ion-input>
+            </ion-item>
+          </form>
+          <br>
+          <ion-button (click)="guardar()">
+            Restablezca Contraseña
+          </ion-button>
+
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <div>
+      <ion-button [routerLink]="['/login']" color="warning">Volver</ion-button>
+    </div>
+  </div>
+
+</ion-content>
+<!-- FIN DE CONTENT -->

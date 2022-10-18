@@ -1,0 +1,62 @@
+<!-- HEADER -->
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      ¡Bienvenido!
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<!-- TERMINO DE HEADER -->
+
+<!-- INICIO DE CONTENT -->
+<ion-content>
+
+  <div id="container">
+
+    <div id="tellevo">
+      <img src="../assets/img/TeLlevo.png" alt="Viaje">
+    </div>
+    <br>
+    <strong>¿Tienes tus viajes planificados?</strong>
+    <br>
+    <p>Empieza por Ingresar tus credenciales:</p>
+    <br>
+
+    <form [formGroup]="formularioLogin">
+      <ion-item>
+        <ion-label position="floating">Usuario</ion-label>
+        <ion-input formControlName="usuario" type="text" minlength="10" maxlength="25"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input formControlName="pass" type="password" minlength="6" maxlength="6"></ion-input>
+      </ion-item>
+    </form>
+    <br>
+
+    <ion-button (click)="ingresar()" color="warning">
+      Ingresar
+    </ion-button>
+    <br><br>
+    <p>¿Olvidaste tu contraseña?</p>
+    <ion-button [routerLink]="['/registro']" color="warning">Recupera tu Contraseña</ion-button>
+    <br>
+
+    <img src="../assets/img/Auto.png" alt="Viaje">
+  </div>
+
+</ion-content>
+
+<!-- FIN DE CONTENT -->
+
+<!-- INICIO FOOTER
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/registro']">Recupera tu Contraseña</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
+FIN DE FOOTER -->
+
+<!-- PARAMETROS DE LINEA 28 y 32 ESTÁN EN: login.page.ts -->

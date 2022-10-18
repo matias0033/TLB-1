@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div id="tellevo">
+    <img src="../assets/img/TeLlevo.png" alt="Viaje">
+  </div>
+
+  <div id="inicio">
+
+    <ion-button (click)="salir()" color="warning">
+      Salir
+    </ion-button>
+
+    <br>
+    <strong id="fecha">{{fecha}}</strong>
+    <br><br><br>
+    <strong>¡Planifica tu viaje con alguién más!</strong>
+    <br>
+    <p>¡Ve quién está cerca de tí y organiza tu próximo viaje! </p>
+    <ion-button [routerLink]="['/plan']" expand="block">Organiza tu Viaje</ion-button>
+    <br>
+    <strong>Ve los Detalles de tu Viaje Seleccionado</strong>
+    <br>
+    <p>Aquí puedes ver los detalles como los pasajeros, choferes, o la tarifa de tu viaje.</p>
+    <ion-button [routerLink]="['/detalle']" expand="block">Ver Detalles del Viaje</ion-button>
+    <br>
+    <strong>Ver la Ruta del Viaje</strong>
+    <br>
+    <p>Aquí puedes revisar la ruta del destino y donde está el transporte de tu viaje.</p>
+    <ion-button [routerLink]="['/mapa']" expand="block">Observar Ruta del Destino</ion-button>
+    <br>
+    <img src="../assets/img/Student.jpg" alt="Estudiantes">
+  </div>
+
+</ion-content>
