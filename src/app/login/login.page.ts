@@ -49,40 +49,7 @@ export class LoginPage implements OnInit {
     }
   } /*6*/
 
-  // login() {
-  //   this.api.login().subscribe((data) => {
-  //     this.data = data;
-
-  //     // this.data.alumnos[i].username;
-  //     for (let i = 0; i < this.data.alumnos.length; i++) {
-  //       this.userEmail = this.data.alumnos[i].username + '@duocuc.cl';
-  //       this.username = this.data.alumnos[i].username;
-  //       this.nombre = this.data.alumnos[i].nombre;
-
-  //       // .substring(0, data[i].nombre.indexOf(' ') + 21 - 5 + 3 );
-
-  //       var userPassword = this.data.alumnos[i].password;
-
-  //       if (
-  //         (this.email == this.userEmail && this.password == userPassword) ||
-  //         (this.email == this.username && this.password == userPassword)
-  //       ) {
-  //         console.log(this.nombre);
-
-  //         localStorage.setItem('uid', this.userEmail);
-  //         localStorage.setItem('nombre', this.nombre);
-
-  //         this.falsoLoading();
-  //         this.boolean = true;
-  //         return;
-  //       }
-  //     }
-  //     this.alertas.presentAlert('Error', 'Sus credencianles son inválidas.');
-  //     this.boolean = false;
-  //     return;
-  //   });
-  // }
-
+  /* IMPLEMENTACION MODULO AXIOS */
   async AxiosLogin() {
     let BaseURL = 'https://nancyb3a.github.io/Test/usuarios_PGY4121_09.json';
     var f = this.formularioLogin.value;
@@ -107,22 +74,8 @@ export class LoginPage implements OnInit {
             buttons: ['Aceptar'],
           })
         }
-      }
- 
+      } 
     })
-
-    //console.log(api)
-    // api.forEach(res => {
-    //   console.log(res.data.alumnos)
-    //   console.log(res.headers)
-    // });
-    // for (let i = 0; i < api.length; i++) {
-    //   const element = api.forEach(res => {
-    //     console.log(res.)
-    //   });
-    //   console.log(element)
-
-    // }
   }
 }
 
