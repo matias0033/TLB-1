@@ -25,8 +25,8 @@ const routes: Routes = [
     canActivate: [IngresadoGuard] /*3*/
   },
   {
-    path: 'notfound',
-    loadChildren: () => import('./notfound/notfound.module').then( m => m.NotfoundPageModule)
+    path: '**',
+    loadChildren: () => import('./notfound/notfound.module').then(m => m.NotfoundPageModule) /* 4 */
   },
 ];
 
@@ -37,3 +37,8 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+/* 1.- RouteGUARD */
+/* 2.- RouteGUARD */
+/* 3.- RouteGUARD */
+/* 4.- 404 Not Found */

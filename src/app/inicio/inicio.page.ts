@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, NavController } from '@ionic/angular';
 import * as moment from 'moment';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inicio',
@@ -13,12 +14,15 @@ export class InicioPage implements OnInit {
   nombre: string;
   miembro: string;
 
-  constructor(public alertController: AlertController,
-    public navCtrl: NavController) {
-    moment.locale('es-mx');
-    this.fecha = moment().format("D MMM YYYY, h:mm:ss a");
+  constructor(
+    public alertController: AlertController,
+    public navCtrl: NavController,
+    private router: Router) {
     let miembro = JSON.parse(localStorage.getItem('miembro'));
     this.nombre = miembro.nombre;
+    moment.locale('es-mx');
+    this.fecha = moment().format("D MMM YYYY");
+    this.router.navigate(['/inicio/pasajero']); /*(['/inicio @@@/pasajero'@@@]); @@@@@@@@@@@ */
   }
 
   ngOnInit() {
@@ -47,5 +51,11 @@ export class InicioPage implements OnInit {
     await alert.present();
   }
 
+  segmentChanged($event) {
+    console.log($event)
+    let direccion = $event.detail.value;
+    //Cargar una ruta del Componente.
+    this.router.navigate(['/inicio/' + direccion]);
+  }
 }
 ////

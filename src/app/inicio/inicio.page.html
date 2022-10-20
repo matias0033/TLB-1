@@ -1,3 +1,4 @@
+<!-- HEADER -->
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
@@ -5,8 +6,22 @@
     </ion-buttons>
     <ion-title>Inicio</ion-title>
   </ion-toolbar>
-</ion-header>
 
+  <ion-toolbar>
+    <ion-segment (ionChange)="segmentChanged($event)" scrollable value="pasajero">
+      <ion-segment-button value="pasajero">
+        <ion-label>Pasajero</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="conductor">
+        <ion-label>Conductor</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+<!-- FIN DE HEADER -->
+
+<!-- CONTENT -->
 <ion-content>
 
   <div id="tellevo">
@@ -14,18 +29,18 @@
   </div>
 
   <div id="inicio">
-
     <ion-button (click)="salir()" color="warning">
       Salir
     </ion-button>
+    <br>
 
-
-    <br><br>
-    <strong id="fecha">{{fecha}}</strong>
-
-    <br><br>
     <strong id="nombre">Bienvenido <br>{{nombre}}</strong>
-    <br><br><br>
+    <br>
+
+    <small>El día de hoy es:</small>
+    <p id="fecha">{{fecha}}</p>
+    <br>
+
     <strong>¡Planifica tu viaje con alguién más!</strong>
     <br>
     <p>¡Ve quién está cerca de tí y organiza tu próximo viaje! </p>
@@ -44,4 +59,9 @@
     <img src="../assets/img/Student.jpg" alt="Estudiantes">
   </div>
 
+</ion-content>
+<!-- CONTENT -->
+
+<ion-content>
+  <ion-router-outlet></ion-router-outlet>
 </ion-content>
