@@ -15,20 +15,20 @@ export class InicioPage implements OnInit {
   miembro: string;
 
   constructor(
-    public alertController: AlertController,
-    public navCtrl: NavController,
+    //public alertController: AlertController,
+    //public navCtrl: NavController,
     private router: Router) {
-    let miembro = JSON.parse(localStorage.getItem('miembro'));
-    this.nombre = miembro.nombre;
-    moment.locale('es-mx');
-    this.fecha = moment().format("D MMM YYYY");
+    //let miembro = JSON.parse(localStorage.getItem('miembro'));
+    //this.nombre = miembro.nombre;
+    //moment.locale('es-mx');
+    //this.fecha = moment().format("D MMM YYYY");
     this.router.navigate(['/inicio/pasajero']); /*(['/inicio @@@/pasajero'@@@]); @@@@@@@@@@@ */
   }
 
   ngOnInit() {
   }
 
-  async salir() {
+  /*async salir() {
     const alert = await this.alertController.create({
       header: 'Salir',
       message: '¿Seguro desea salir?',
@@ -49,7 +49,7 @@ export class InicioPage implements OnInit {
     });
 
     await alert.present();
-  }
+  }*/
 
   segmentChanged($event) {
     console.log($event)
@@ -58,4 +58,4 @@ export class InicioPage implements OnInit {
     this.router.navigate(['/inicio/' + direccion]);
   }
 }
-////
+//Lo comentado aquí es lo que era parte de la sintaxis Original.
