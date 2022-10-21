@@ -1,3 +1,30 @@
-<p>
-  conductor works!
-</p>
+<!-- CONTENT -->
+<ion-content>
+
+  <div id="tellevo">
+    <img src="../assets/img/TeLlevo.png" alt="Viaje">
+  </div>
+
+  <div id="inicio">
+    <ion-button (click)="salir()" color="warning" size="small">
+      Cerrar Sesión
+    </ion-button>
+
+    <ion-card class="card">
+      <strong id="nombre">Bienvenido<br>{{nombre}}</strong>
+      <br>
+      <small>El día de hoy es:</small>
+      <p id="fecha">{{fecha}}</p>
+    </ion-card>
+    <br>
+
+    <strong>Ve los Detalles del Conductor de tu Viaje Seleccionado</strong>
+    <br>
+    <p>Aquí puedes ver los detalles como los conductores, pasajeros, o la tarifa de tu viaje.</p>
+    <ion-button [routerLink]="['/plan']" expand="block">Organiza tu Viaje</ion-button>
+    <img src="../assets/img/B.jpg" alt="">
+    <img src="../assets/img/Student.jpg" alt="Estudiantes">
+  </div>
+
+</ion-content>
+<!-- CONTENT -->

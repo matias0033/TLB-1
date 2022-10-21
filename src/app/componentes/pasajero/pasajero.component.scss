@@ -1,28 +1,33 @@
 #tellevo {
-    background-color: white;
-  }
-  
-  #inicio {
-    background-color: #012c56;
-    border-radius: 1%;
-    padding: 10px;
-    margin: 5px;
-  
-    text-align: center;
-    position: absolute;
-  }
-  
-  #inicio strong {
-    font-size: 22px;
-    font-weight: bolder;
-    color: #ffb71b;
-  }
-  
-  #inicio p {
-    color: #ffffff;
-  }
-  
-  #inicio img {
-    padding-top: 10px;
-    border-radius: 1%;
-  }
+  background-color: white;
+}
+
+#inicio {
+  background-color: #012c56;
+  border-radius: 1%;
+  padding: 10px;
+  margin: 5px;
+
+  text-align: center;
+  position: absolute;
+}
+
+.card {
+  background-color: #1e1e1e;
+  padding-top: 20px;
+}
+
+#inicio strong {
+  font-size: 22px;
+  font-weight: bolder;
+  color: #ffb71b;
+}
+
+#inicio p {
+  color: #ffffff;
+}
+
+#inicio img {
+  padding-top: 10px;
+  border-radius: 1%;
+}

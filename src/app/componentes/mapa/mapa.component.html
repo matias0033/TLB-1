@@ -1,12 +1,38 @@
-<ion-header>
-  <ion-back-button></ion-back-button>
-</ion-header>
+<!-- CONTENT -->
 <ion-content>
+
   <div id="tellevo">
     <img src="../assets/img/TeLlevo.png" alt="Viaje">
   </div>
 
-  <div id="mapa">
-    <img src="../assets/img/C.jpg" alt="Estudiantes">
+  <div id="inicio">
+    <ion-button (click)="salir()" color="warning" size="small">
+      Cerrar Sesión
+    </ion-button>
+
+    <ion-card class="card">
+      <strong id="nombre">Bienvenido<br>{{nombre}}</strong>
+      <br>
+      <small>El día de hoy es:</small>
+      <p id="fecha">{{fecha}}</p>
+    </ion-card>
+    <br>
+
+    <strong>Ver la Ruta del Viaje generado por TeLlevo Duoc</strong>
+    <br>
+    <p>Aquí puedes revisar la ruta del destino y donde está el transporte dpara tu próximo viaje.</p>
+    <ion-button [routerLink]="['/plan']" expand="block">Observar Ruta del Destino</ion-button>
+    <br>
+
+    <div class="contain-map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1406.338682289358!2d-71.53357786241948!3d-33.033936710794954!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689de64d74fd4af%3A0x8004f381e9055a38!2sDuoc%20UC%3A%20Sede%20Vi%C3%B1a%20Del%20Mar!5e0!3m2!1ses!2scl!4v1666317738156!5m2!1ses!2scl"
+        width="275" height="460" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+    <img src="../assets/img/Student.jpg" alt="Estudiantes">
   </div>
+
 </ion-content>
+<!-- CONTENT -->
