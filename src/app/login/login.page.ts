@@ -64,6 +64,7 @@ export class LoginPage implements OnInit {
 
           let ApiObj = {"usuario": ApiRes.username, "pass": ApiRes.password, "nombre": ApiRes.nombre}
           localStorage.setItem('miembro', JSON.stringify(ApiObj));
+
           this.ingresar()
           console.log(ApiRes)
           console.log('yes')

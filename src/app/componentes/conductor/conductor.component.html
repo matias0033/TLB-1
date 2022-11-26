@@ -21,8 +21,79 @@
     <strong>Ve los Detalles del Conductor de tu Viaje Seleccionado</strong>
     <br>
     <p>Aquí puedes ver los detalles como los conductores, pasajeros, o la tarifa de tu viaje.</p>
-    <ion-button [routerLink]="['/plan']" expand="block">Organiza tu Viaje</ion-button>
-    <img src="../assets/img/B.jpg" alt="">
+    <ion-button (click)="organizaViaje()" expand="block">Registrar vehiculo</ion-button>
+
+    <ion-card class="card">
+      <strong id="nombre">
+        A
+        <br>
+        a
+        <br>
+        a
+        <br>
+        a
+        <br>
+        a
+        <br>
+      </strong>
+    </ion-card>
+
+    <!--///////////////////////////////////////////////////////////////////////////////////////////
+    //// AQUI VAN LOS DATOS CULIAOS BASTARDOS DEL CONDUCTOR MALDITO ///////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////-->
+    <ion-card class="card">
+      
+      <div style="height: 300px;">
+        <!-- <ion-icon name="arrow-back-outline" style="font-size: 25px;" (click)="atras()"></ion-icon> -->
+        <div id="mapviaje" cancelable="false"></div>
+      </div>
+
+      <div *ngFor="let viaje of viajes; let i = index">
+        
+        <div *ngIf="viaje.uidpasajero === uidpasajero">
+          <div *ngFor="let vehiculo of vehiculos; let i = index">
+            <div *ngFor="let ruta of rutas; let i = index">
+              <div *ngIf="vehiculo.uid == viaje.uidconductor && ruta.uid == vehiculo.uid && ruta.uid == viaje.uidconductor">
+                
+                <ion-card-header>
+                  <ion-card-title style="color: #012C56;">{{vehiculo.marca}} {{vehiculo.modelo}}</ion-card-title>
+                  <ion-card-subtitle style="color: #012C56;">{{vehiculo.placa}}</ion-card-subtitle>
+                  <hr>                  
+                  <p style="color: #012C56;">Chofer: {{vehiculo.propietario}}</p>
+                  <p style="color: #012C56;">Hora salida: {{vehiculo.hora}} horas </p>
+                  <p style="color: #012C56;">Correo: {{vehiculo.uid}} </p>
+  
+                  <ion-col class="ion-align-self-center">
+                    <ion-button (click)="borrarViaje(viaje, i)" expand="block">
+                      <ion-icon name="trash"></ion-icon>
+                      Salir del viaje
+                    </ion-button>
+                    <!-- <ion-button expand="full" (click)="obtenerGeolocalizacion()">
+                      <ion-icon name="location-outline"></ion-icon>
+                    </ion-button> -->
+                  </ion-col>
+  
+                </ion-card-header>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </ion-card>
+
+    
+    <!-- CARGANDOOO -->
+    <div
+    *ngIf="cargando"
+    class="ion-text-center"
+    style="position: fixed; left: 50%; top: 50%"
+  >
+    <ion-spinner name="circular"></ion-spinner>
+  </div>
+
+    <!--<img src="../assets/img/B.jpg" alt="">-->
   </div>
 
 </ion-content>
